@@ -13,13 +13,13 @@
 <div class="row">
 
     <div class="col-sm-2 bg-white vh-100 px-0">
-        <div class="nav flex-column nav-pills ps-2"  aria-orientation="vertical" id="v-pills-tab" role="tablist">
+        <div class="nav flex-column nav-pills ps-2" aria-orientation="vertical" id="v-pills-tab" role="tablist">
             <a class="nav-link active" href="/admin">Admin</a>
             <a class="nav-link" href="/user">User</a>
         </div>
     </div>
 
-    <div class="col-sm pe-5" >
+    <div class="col-sm pe-5">
         <h1>Admin panel</h1>
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item" role="presentation">
@@ -115,7 +115,8 @@
                             <label for="newRoles" class="translate-middle-x start-50 position-relative">
                                 <b>Roles</b>
                             </label>
-                            <select class="form-select" th:name="rolesId" multiple aria-label="multiple select" id="newRoles">
+                            <select class="form-select" th:name="rolesId" multiple aria-label="multiple select"
+                                    id="newRoles">
                                 <option th:each="role : ${@roleService.findAll()}"
                                         th:text="${role.role}"
                                         th:value="${role.id}">
@@ -164,8 +165,6 @@
                         <input type="text" class="form-control" id="editPassword" name="password">
                     </div>
 
-                    <!--                    - -->
-
                     <div class="mt-3">
                         <label for="editName" class="translate-middle-x start-50 position-relative">
                             <b>Name</b>
@@ -179,8 +178,6 @@
                         </label>
                         <input type="text" class="form-control" id="editSurname" name="surname">
                     </div>
-
-                    <!--                    - -->
 
                     <div class="mt-3">
                         <label for="editAge" class="translate-middle-x start-50 position-relative">
@@ -263,16 +260,18 @@
                         <label for="deleteRoles" class="translate-middle-x start-50 position-relative">
                             <b>Roles</b>
                         </label>
-                        <select multiple disabled aria-label="multiple select" class="form-control" id="deleteRoles" name="roles">
+                        <select multiple disabled aria-label="multiple select" class="form-control" id="deleteRoles"
+                                name="roles">
 
                         </select>
                     </div>
-
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeDelete">Close</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="submitDeleteBtn">Delete</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeDelete">Close
+                    </button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="submitDeleteBtn">Delete
+                    </button>
                 </div>
             </div>
         </div>

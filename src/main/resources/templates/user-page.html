@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <title>Current user</title>
     <meta charset="UTF-8" th:insert="~{header :: bootstrap}">
@@ -16,13 +17,12 @@
     <div class="col-sm-2 bg-white vh-100 px-0">
         <div class="nav flex-column nav-pills ps-2" aria-orientation="vertical" id="v-pills-tab" role="tablist">
             <div sec:authorize="hasRole('ROLE_ADMIN')">
-<!--            <div sec:authorize="hasRole('ROLE_USER')">-->
                 <a class="nav-link" href="/admin">Admin</a>
             </div>
             <a class="nav-link active" href="/user">User</a>
         </div>
     </div>
-    <div class="col-sm" >
+    <div class="col-sm">
         <h1>User information-page</h1>
         <div class="tab-content border">
             <div class="tab-pane fade show active" id="all">
@@ -57,7 +57,6 @@
         </div>
     </div>
 </div>
-
 
 
 <div th:insert="~{header :: fragm}"></div>
