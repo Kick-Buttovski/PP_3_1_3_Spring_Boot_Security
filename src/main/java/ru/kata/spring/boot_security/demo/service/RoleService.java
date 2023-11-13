@@ -22,12 +22,6 @@ public class RoleService {
                 .orElseThrow(IllegalArgumentException::new);
     }
 
-    @PostConstruct
-    public void initRoles() {
-        roleRepository.save(new Role("ROLE_USER"));
-        roleRepository.save(new Role("ROLE_ADMIN"));
-    }
-
     @Transactional
     public Collection<Role> findAll() {
         return roleRepository.findAll();

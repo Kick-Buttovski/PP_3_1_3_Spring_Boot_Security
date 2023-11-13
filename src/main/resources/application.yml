@@ -9,15 +9,13 @@ spring:
     url: jdbc:mysql://localhost:3306/pp_3_1_3
     username: root
     password: 1234
-
-  # Настройки JPA (Java Persistence API)
   jpa:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
         show_sql: true
         hbm2ddl:
-          auto: create
+          auto: create-drop
 
 # Настройки скрытого метода
 hiddenmethod:

@@ -75,14 +75,6 @@ public class UserService implements UserDetailsService {
         userRepository.findByUsername(username).ifPresent((this::flushUser));
     }
 
-    @PostConstruct
-    public void initUsers() {
-        Role user = roleService.getRole("ROLE_USER");
-        Role admin = roleService.getRole("ROLE_ADMIN");
-        userRepository.save(new User("admin", passwordEncoder.encode("admin"), "Admin", "Adminskiy", 27, List.of(user, admin)));
-        userRepository.save(new User("user", passwordEncoder.encode("user"), "Leo", "Messi", 36, List.of(user)));
-    }
-
     private void flushUser(User user) {
         user.setRoles(null);
         userRepository.delete(user);

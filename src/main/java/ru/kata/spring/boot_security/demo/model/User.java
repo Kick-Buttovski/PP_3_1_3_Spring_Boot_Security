@@ -21,12 +21,12 @@ public class User implements UserDetails {
     @Column
     @NotBlank(message = "Username is required")
     @Pattern(regexp = "^[a-zA-Z\\-_]+$", message = "The name can only contain letters, dashes, and underscores.")
-    @Size(min = 5, max = 20, message = "The name must be between 5 and 20 characters long")
+    @Size(min = 3, max = 20, message = "The name must be between 5 and 20 characters long")
     private String username;
 
     @Column
     @NotBlank(message = "Name is required")
-    @Size(min = 3, max = 20, message = "The password length must be from 3 to 20 characters")
+    @Size(min = 3, max = 200, message = "The password length must be from 3 to 200 characters")
     private String password;
 
     @Column
@@ -48,10 +48,11 @@ public class User implements UserDetails {
     @Max(value = 100, message = "Age must be at most 100")
     private Integer age;
 
+//    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @ManyToMany(cascade = CascadeType.MERGE)
     @JoinTable(name = "users_roles",
-            joinColumns = @JoinColumn(name = "username"),
-            inverseJoinColumns = @JoinColumn(name = "role"))
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
     private List<Role> roles;
 
 
